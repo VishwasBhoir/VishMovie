@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-gray-900 text-white;
+	background-color: #191a1d;
+	font-family: "Poppins", sans-serif;
+}
+
+.movies-section {
+	@apply px-[7%] py-10;
+}
+
+.dark body {
+	@apply bg-white text-black;
+}

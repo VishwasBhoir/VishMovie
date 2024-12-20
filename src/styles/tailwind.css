@@ -1,0 +1,34 @@
+/* ...existing code... */
+
+.movie-card {
+	@apply bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 relative;
+	background-size: cover;
+	background-position: center;
+}
+
+.movie-poster {
+	@apply hidden;
+}
+
+.movie-details {
+	@apply absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-4;
+}
+
+.movie-title {
+	@apply text-lg font-semibold mb-2;
+}
+
+.movie-rating,
+.movie-release-date {
+	@apply text-sm;
+}
+
+.movie-overview {
+	@apply text-sm mt-2;
+}
+
+.read-more-btn {
+	@apply mt-4 text-blue-500 hover:text-blue-700;
+}
+
+/* ...existing code... */
