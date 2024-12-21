@@ -17,7 +17,7 @@ const Upcoming = () => {
 
 	return (
 		<div className="movies-section">
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-7 gap-y-24 mb-24 lg:mb-32">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-7 mb-24 lg:mb-32">
 				{moviesData &&
 					moviesData.map(movie => (
 						<Link to={`/movie/${movie.id}`} key={movie.id}>
