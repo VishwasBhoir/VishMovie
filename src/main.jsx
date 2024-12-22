@@ -3,11 +3,12 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router";
+import { Provider } from "react-redux";
+import store from "./store/store.js";
 import {
 	Home,
 	TopRated,
 	Upcoming,
-	Popular,
 	MovieDetails,
 } from "./components/index.js";
 
@@ -42,6 +43,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<RouterProvider router={router} />
+		<Provider store={store}>
+			<RouterProvider router={router} />
+		</Provider>
 	</StrictMode>
 );

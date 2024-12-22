@@ -49,9 +49,9 @@ const Header = ({ onSearch }) => {
 
 					{/* Hamburger Menu (Small Screens Only) */}
 
-					<div className="lg:hidden flex space-x-3">
+					<div className="block lg:hidden space-x-3">
 						<button
-							onClick={() => setIsOpen(!isOpen)} // Toggle open/close
+							onClick={() => setIsOpen(!isOpen)}
 							className="text-white focus:outline-none"
 						>
 							{isOpen ? (
@@ -62,7 +62,7 @@ const Header = ({ onSearch }) => {
 						</button>
 					</div>
 
-					<div className="lg:hidden flex items-center">
+					<div className="block lg:hidden items-center">
 						<DarkLightToggleBtn />
 					</div>
 
