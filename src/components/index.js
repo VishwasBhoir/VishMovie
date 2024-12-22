@@ -12,6 +12,7 @@ import Logo from "./logo/Logo";
 import GlobalSearch from "./globalSearch/GlobalSearch";
 import Pagination from "./pagination/Pagination";
 import MovieDetails from "./movieDetails/MovieDetails";
+import ShimmerGrid from "./shimmerComponents/ShimmerGrid";
 
 export {
 	Header,
@@ -28,4 +29,5 @@ export {
 	GlobalSearch,
 	Pagination,
 	MovieDetails,
+	ShimmerGrid,
 };

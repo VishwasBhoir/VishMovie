@@ -15,6 +15,7 @@ const MovieDetails = () => {
 
 	return (
 		<div className="movie-details-page bg-gray-900 text-white">
+			{console.log("movie", movie)}
 			<div className="container mx-auto py-8">
 				<div className="flex flex-col lg:flex-row">
 					<img
