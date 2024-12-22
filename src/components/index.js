@@ -13,6 +13,7 @@ import GlobalSearch from "./globalSearch/GlobalSearch";
 import Pagination from "./pagination/Pagination";
 import MovieDetails from "./movieDetails/MovieDetails";
 import ShimmerGrid from "./shimmerComponents/ShimmerGrid";
+import SearchMovie from "./SearchMovie/SearchMovie";
 
 export {
 	Header,
@@ -30,4 +31,5 @@ export {
 	Pagination,
 	MovieDetails,
 	ShimmerGrid,
+	SearchMovie,
 };
