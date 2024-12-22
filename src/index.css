@@ -9,7 +9,7 @@ body {
 }
 
 .movies-section {
-	@apply px-[7%] py-10;
+	@apply px-[7%] pt-36;
 }
 
 .dark body {
