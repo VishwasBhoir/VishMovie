@@ -5,12 +5,7 @@ import App from "./App.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
-import {
-	Home,
-	TopRated,
-	Upcoming,
-	MovieDetails,
-} from "./components/index.js";
+import { Home, TopRated, Upcoming, MovieDetails } from "./components/index.js";
 
 const router = createBrowserRouter([
 	{
