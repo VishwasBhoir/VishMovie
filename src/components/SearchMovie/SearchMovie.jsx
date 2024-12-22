@@ -34,31 +34,34 @@ const SearchMovie = ({ isOpen, onClose }) => {
 	return (
 		<div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
 			<div
-				className="bg-white w-[95%] md:w-[70%] xl:w-[60%] rounded shadow-lg p-4 sm:p-10"
+				className="bg-white dark:bg-gray-900  w-[95%] md:w-[70%] xl:w-[60%] rounded shadow-lg p-4 sm:p-10"
 				style={{ height: "80vh" }}
 			>
-				<div className="flex items-center justify-between sticky top-0 z-10 bg-white mb-5">
+				<div className="flex items-center justify-between sticky top-0 z-10 bg-white dark:bg-gray-900 mb-5">
 					<input
 						type="text"
 						ref={inputRef}
 						value={searchQuery}
 						onChange={e => setSearchQuery(e.target.value)}
 						placeholder="Search Movie..."
-						className="w-4/5 md:w-3/5 p-2 border rounded text-gray-800 border-gray-300 focus:outline-gray-300"
+						className="w-4/5 md:w-3/5 p-2 border rounded text-gray-800 dark:text-white border-gray-300  focus:outline-gray-300 dark:focus:outline-gray-600 dark:bg-gray-700 "
 					/>
-					<button onClick={onClose} className="text-black font-extrabold">
-						<RiCloseLine size={24} />
+					<button
+						onClick={onClose}
+						className="text-black dark:text-white font-extrabold"
+					>
+						<RiCloseLine size={30} />
 					</button>
 				</div>
 				<div
-					className="overflow-y-auto p-4"
+					className="overflow-y-auto p-4 "
 					style={{
 						maxHeight: "calc(70vh - 64px)", // Adjust based on header height
 					}}
 				>
 					<div className="grid grid-cols-2  lg:grid-cols-3 gap-7 mb-16 lg:mb-24">
 						{searchResults
-							? searchResults.map((movie, index) => (
+							? searchResults.map(movie => (
 									<Link
 										to={`/movie/${movie.id}`}
 										key={movie.id}

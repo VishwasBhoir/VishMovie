@@ -15,20 +15,20 @@
 }
 
 .movie-title {
-	@apply text-lg font-semibold mb-2;
+	@apply text-lg font-semibold mb-2 text-[#d3d1ce];
 }
 
-.movie-rating,
+.movie-rating{
+	@apply text-[#d3d1ce];
+},
 .movie-release-date {
-	@apply text-sm;
+	@apply text-sm text-[#d3d1ce];
 }
 
 .movie-overview {
 	@apply text-sm mt-2;
 }
 
-.read-more-btn {
-	@apply mt-4 text-blue-500 hover:text-blue-700;
-}
+
 
 /* ...existing code... */

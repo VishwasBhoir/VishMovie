@@ -23,12 +23,12 @@ const DarkLightToggleBtn = () => {
 		>
 			{isDarkMode ? (
 				<MdOutlineLightMode
-					size={22}
+					size={20}
 					className="bg-gray-600 rounded-full h-7 w-7 p-0.5"
 				/>
 			) : (
 				<MdOutlineDarkMode
-					size={22}
+					size={20}
 					className="bg-gray-600 rounded-full h-7 w-7 p-0.5"
 				/>
 			)}

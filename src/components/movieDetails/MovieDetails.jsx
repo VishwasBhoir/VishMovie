@@ -1,21 +1,21 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useFetchMovieDetails from "../../utils/useFetchMovieDetails";
+import useFetchCast from "../../utils/useFetchCast";
+import { Cast } from "./../../components";
 
 const MovieDetails = () => {
 	const { id } = useParams();
 
-	const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US`;
-
-	const movie = useFetchMovieDetails(URL);
+	const movie = useFetchMovieDetails(id);
+	const cast = useFetchCast(id);
 
 	if (!movie) {
 		return <div>Loading...</div>;
 	}
 
 	return (
-		<div className="movie-details-page bg-gray-900 text-white">
-			{console.log("movie", movie)}
+		<div className="movie-details-page bg-white dark:bg-[#191a1d] text-slate-800 dark:text-white mt-28 px-7 py-4">
+			{console.log("cast", movie)}
 			<div className="container mx-auto py-8">
 				<div className="flex flex-col lg:flex-row">
 					<img
@@ -31,12 +31,20 @@ const MovieDetails = () => {
 							<span className="font-bold">Rating:</span> {movie.vote_average}
 						</p>
 						<p className="mt-4">
+							<span className="font-bold">Running Time:</span>{" "}
+							{Math.floor(movie.runtime / 60) +
+								"h " +
+								(movie.runtime % 60) +
+								"m"}
+						</p>
+						<p className="mt-4">
 							<span className="font-bold">Genres:</span>{" "}
 							{movie.genres.map(genre => genre.name).join(", ")}
 						</p>
 					</div>
 				</div>
 			</div>
+			<Cast cast={cast} />
 		</div>
 	);
 };

@@ -14,6 +14,8 @@ import Pagination from "./pagination/Pagination";
 import MovieDetails from "./movieDetails/MovieDetails";
 import ShimmerGrid from "./shimmerComponents/ShimmerGrid";
 import SearchMovie from "./SearchMovie/SearchMovie";
+import Cast from "./cast/Cast";
+import CastCard from "./castCard/CastCard";
 
 export {
 	Header,
@@ -32,4 +34,6 @@ export {
 	MovieDetails,
 	ShimmerGrid,
 	SearchMovie,
+	Cast,
+	CastCard,
 };
