@@ -1,23 +1,27 @@
-// ThemeContext.jsx
-import { createContext, useContext, useState } from "react";
+import  { createContext, useState, useEffect } from "react";
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-	// const [darkMode, setDarkMode] = useState(false);
-
-	const toggleTheme = () => setDarkMode(!darkMode);
-
-	const [darkMode, setDarkMode] = useState(() => {
-		const savedMode = localStorage.getItem("darkMode");
-		return savedMode ? JSON.parse(savedMode) : false;
+	const [theme, setTheme] = useState(() => {
+		// Check for user's preference or default to light
+		return localStorage.getItem("theme") || "light";
 	});
 
+	useEffect(() => {
+		// Update the `data-theme` attribute on the `html` element
+		document.documentElement.setAttribute("data-theme", theme);
+		// Save the theme in localStorage
+		localStorage.setItem("theme", theme);
+	}, [theme]);
+
+	const toggleTheme = () => {
+		setTheme(prevTheme => (prevTheme === "light" ? "dark" : "light"));
+	};
+
 	return (
-		<ThemeContext.Provider value={{ darkMode, toggleTheme }}>
+		<ThemeContext.Provider value={{ theme, toggleTheme }}>
 			{children}
 		</ThemeContext.Provider>
 	);
 };
-
-export const useTheme = () => useContext(ThemeContext);

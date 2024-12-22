@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+[data-theme="dark"] {
+	@apply bg-gray-900 text-[#d3d1ce];
+}
 body {
-	@apply bg-gray-900 text-white;
-	background-color: #191a1d;
+	@apply bg-white text-[#d3d1ce]  dark:text-[#d3d1ce];
 	font-family: "Poppins", sans-serif;
 }
 
@@ -13,5 +15,5 @@ body {
 }
 
 .dark body {
-	@apply bg-white text-black;
+	@apply text-white bg-[#191a1d];
 }

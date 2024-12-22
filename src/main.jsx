@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { Home, TopRated, Upcoming, MovieDetails } from "./components/index.js";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const router = createBrowserRouter([
 	{
@@ -38,8 +39,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<Provider store={store}>
-			<RouterProvider router={router} />
-		</Provider>
+		<ThemeProvider>
+			<Provider store={store}>
+				<RouterProvider router={router} />
+			</Provider>
+		</ThemeProvider>
 	</StrictMode>
 );

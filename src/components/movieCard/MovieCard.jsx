@@ -2,14 +2,14 @@
 import { useState } from "react";
 
 const MovieCard = props => {
-	const { id, title, posterPath, rating, releaseDate, overview } = props;
+	const { title, posterPath, rating, releaseDate } = props;
 
 	const [showOverview, setShowOverview] = useState(false);
 	const imageUrl = `https://image.tmdb.org/t/p/w500${posterPath}`;
 
 	return (
 		<div
-			className="cursor-pointer hover:scale-105 duration-300 relative rounded-lg"
+			className="cursor-pointer hover:scale-105 duration-300 relative rounded-lg text-[#d3d1ce]"
 			//background image style for card
 			style={{
 				backgroundImage: `url(${imageUrl})`,
@@ -36,11 +36,11 @@ const MovieCard = props => {
 					</div>
 				</div>
 			)}
-			<div className=" h-full w-full absolute bottom-0 bg-gradient-to-b from-black/30 to-black/100 block lg:hidden dark:text-white rounded-lg">
+			<div className=" h-full w-full absolute bottom-0 bg-gradient-to-b from-black/30 to-black/100 block lg:hidden text-white rounded-lg">
 				{/* <img src={imageUrl} alt={title} className="movie-poster" /> */}
 
 				<div className="movie-details w-full bg-gradient-to-b from-black/0 to-black/100 absolute bottom-0 rounded-lg">
-					<div className="w-[90%] mx-auto py-2">
+					<div className="w-[90%] mx-auto py-2 text-[#d3d1ce]">
 						<h3 className="movie-title">{title}</h3>
 						<p className="movie-rating">Rating: {rating.toFixed(1)}</p>
 						<p className="movie-release-date">Release Date: {releaseDate}</p>
