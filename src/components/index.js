@@ -16,6 +16,7 @@ import ShimmerGrid from "./shimmerComponents/ShimmerGrid";
 import SearchMovie from "./SearchMovie/SearchMovie";
 import Cast from "./cast/Cast";
 import CastCard from "./castCard/CastCard";
+import RouteError from "./routeError/RouteError";
 
 export {
 	Header,
@@ -36,4 +37,5 @@ export {
 	SearchMovie,
 	Cast,
 	CastCard,
+	RouteError,
 };
