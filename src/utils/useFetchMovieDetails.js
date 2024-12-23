@@ -17,7 +17,7 @@ const useFetchMovieDetails = id => {
 		};
 
 		fetchMovie();
-	}, [URL]);
+	}, [id, URL]);
 
 	return movie;
 };

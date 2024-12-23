@@ -17,7 +17,7 @@ const useFetchCast = id => {
 		};
 
 		fetchCast();
-	}, [URL]);
+	}, [id, URL]);
 
 	return cast;
 };
