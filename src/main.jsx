@@ -5,13 +5,20 @@ import App from "./App.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
-import { Home, TopRated, Upcoming, MovieDetails } from "./components/index.js";
+import {
+	Home,
+	TopRated,
+	Upcoming,
+	MovieDetails,
+	RouteError,
+} from "./components/index.js";
 import { ThemeProvider } from "./context/ThemeContext";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
+		errorElement: <RouteError />,
 		children: [
 			{
 				path: "",
@@ -35,6 +42,10 @@ const router = createBrowserRouter([
 			},
 		],
 	},
+	{
+		path: "*",
+		element: <RouteError />,
+	}
 ]);
 
 createRoot(document.getElementById("root")).render(
