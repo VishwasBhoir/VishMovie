@@ -4,15 +4,10 @@ import useFetchCast from "../../utils/useFetchCast";
 import { Cast } from "./../../components";
 
 const MovieDetails = () => {
-	const [movie, setMovie] = useState[null];
-	const [cast, setCast] = useState[null];
-
 	const { id } = useParams();
 
-	useEffect(() => {
-		setMovie(useFetchMovieDetails(id));
-		setCast(useFetchCast(id));
-	},[]
+	const movie = useFetchMovieDetails(id);
+	const cast = useFetchCast(id);
 
 	if (!movie) {
 		return <div>Loading...</div>;
@@ -20,7 +15,6 @@ const MovieDetails = () => {
 
 	return (
 		<div className="movie-details-page bg-white dark:bg-[#191a1d] text-slate-800 dark:text-white mt-28 px-7 py-4">
-			{console.log("cast", movie)}
 			<div className="container mx-auto py-8">
 				<div className="flex flex-col lg:flex-row">
 					<img
