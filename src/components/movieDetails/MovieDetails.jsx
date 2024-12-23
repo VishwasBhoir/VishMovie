@@ -4,10 +4,15 @@ import useFetchCast from "../../utils/useFetchCast";
 import { Cast } from "./../../components";
 
 const MovieDetails = () => {
+	const [movie, setMovie] = useState[null];
+	const [cast, setCast] = useState[null];
+
 	const { id } = useParams();
 
-	const movie = useFetchMovieDetails(id);
-	const cast = useFetchCast(id);
+	useEffect(() => {
+		setMovie(useFetchMovieDetails(id));
+		setCast(useFetchCast(id));
+	},[]
 
 	if (!movie) {
 		return <div>Loading...</div>;
